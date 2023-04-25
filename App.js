@@ -6,6 +6,7 @@ import Accueil from './components/Accueil';
 import Programmation from './components/Programmation';
 import Carte from './components/Carte';
 import Billeterie from './components/Billeterie';
+import Partenaires from './components/Partenaires';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -46,14 +47,13 @@ export default function App() {
       return false;
     });
     setLocalisations(filteredPosts);
-    console.log(localisations)
   }, [posts]);
 
 
   return (
     <NavigationContainer>
       <Drawer.Navigator
-        initialRouteName="Programmation"
+        initialRouteName="Accueil"
         screenOptions={{
           headerTitle: () => (
             <View style={styles.header}>
@@ -78,6 +78,7 @@ export default function App() {
         </Drawer.Screen>
         <Drawer.Screen name="Carte" component={Carte} />
         <Drawer.Screen name="Billeterie" component={Billeterie} />
+        <Drawer.Screen name="Partenaires" component={Partenaires} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
